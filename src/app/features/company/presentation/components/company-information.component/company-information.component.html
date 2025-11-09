@@ -1,0 +1,101 @@
+<div class="border rounded-2xl space-y-5">
+    <div class="grid grid-cols-3 items-center bg-[#D0D0D0] p-4 rounded-t-2xl">
+        <button [routerLink]="['/company']" class="justify-self-start">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+
+        <h1 class="font-bold text-lg text-center">Company Information</h1>
+
+        <div class="flex justify-end items-center space-x-2">
+            <p class="text-md">Enabled</p>
+            @if (company) {
+            <input type="checkbox" [checked]="company.isActive" (change)="changeState()"
+                class="w-4 h-4 accent-black cursor-pointer" />
+            }
+        </div>
+    </div>
+    @if (company) {
+    <div class="space-y-5 flex flex-col p-4">
+        <h1 class="text-2xl font-serif">{{company.name + ", " + company.structure}}</h1>
+        <div class="flex flex-col justify-center items-center md:grid grid-cols-2 gap-5">
+            <div class="flex space-x-5">
+                <p class="font-bold text-md">Name</p>
+                <p class="text-md underline">{{company.name}}</p>
+            </div>
+            <div class="flex space-x-5">
+                <p class="font-bold text-md">Structure</p>
+                <p class="text-md underline">{{company.structure}}</p>
+            </div>
+            <div class="flex space-x-5">
+                <p class="font-bold text-md">Email</p>
+                <p class="text-md underline">{{company.email}}</p>
+            </div>
+            <div class="flex space-x-5">
+                <p class="font-bold text-md">Phone</p>
+                <p class="text-md underline">{{company.phoneNumber}}</p>
+            </div>
+        </div>
+
+    </div>
+    @if (company.locations.length > 0) {
+    <div class="space-y-3">
+        <h2 class="text-md font-bold bg-[#D0D0D0] p-4">Locations</h2>
+        @for (location of company.locations; track location; let i = $index){
+        <div class="p-4 space-y-2 border rounded-2xl sm:m-4 m-2">
+            <h2 class="text-md font-bold">Location {{i+1}}</h2>
+            <div class="flex flex-col justify-center items-center md:grid grid-cols-2 gap-5">
+                <div class="flex space-x-5">
+                    <p class="font-bold text-md">Address</p>
+                    <p class="text-md underline">{{location.firstAddress}}</p>
+                </div>
+                <div class="flex space-x-5">
+                    <p class="font-bold text-md">Second Address</p>
+                    <p class="text-md underline">{{location.secondAddress}}</p>
+                </div>
+                <div class="flex space-x-5">
+                    <p class="font-bold text-md">City</p>
+                    <p class="text-md underline">{{location.city}}</p>
+                </div>
+                <div class="flex space-x-5">
+                    <p class="font-bold text-md">Province</p>
+                    <p class="text-md underline">{{location.province}}</p>
+                </div>
+                <div class="flex space-x-5">
+                    <p class="font-bold text-md">Country</p>
+                    <p class="text-md underline">{{location.country}}</p>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+    }
+    @if (company.contacts.length > 0) {
+    <div class="space-y-3">
+        <h2 class="text-md font-bold bg-[#D0D0D0] p-4">Contacts</h2>
+        @for (contact of company.contacts; track contact; let i = $index){
+        <div class="p-4 space-y-2 border rounded-2xl sm:m-4 m-2">
+            <h2 class="text-md font-bold">Contact {{i+1}}</h2>
+            <div class="flex flex-col justify-center items-center md:grid grid-cols-2 gap-5">
+                <div class="flex space-x-5">
+                    <p class="font-bold text-md">FirstName</p>
+                    <p class="text-md underline">{{contact.firstName}}</p>
+                </div>
+                <div class="flex space-x-5">
+                    <p class="font-bold text-md">LastName</p>
+                    <p class="text-md underline">{{contact.lastName}}</p>
+                </div>
+                <div class="flex space-x-5">
+                    <p class="font-bold text-md">Nickname</p>
+                    <p class="text-md underline">{{contact.nickname}}</p>
+                </div>
+                <div class="flex space-x-5">
+                    <p class="font-bold text-md">Gender</p>
+                    <p class="text-md underline">{{contact.gender}}</p>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+    }
+    }
+</div>

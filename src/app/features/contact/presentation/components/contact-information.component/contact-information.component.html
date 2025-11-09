@@ -1,0 +1,69 @@
+<div class="border rounded-2xl space-y-5">
+    <div class="grid grid-cols-3 items-center bg-[#D0D0D0] p-4 rounded-t-2xl">
+        <button [routerLink]="['/contact']" class="justify-self-start">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+
+        <h1 class="font-bold text-lg text-center">Contact Information</h1>
+
+        <div class="flex justify-end items-center space-x-2">
+            <p class="text-md">Enabled</p>
+            @if (contact) {
+            <input type="checkbox" [checked]="contact.isActive" (change)="changeState()"
+                class="w-4 h-4 accent-black cursor-pointer" />
+            }
+        </div>
+    </div>
+    @if (contact) {
+    <div class="space-y-5 flex flex-col p-4">
+        <h1 class="text-2xl font-serif">{{contact.firstName + " " + contact.lastName}}</h1>
+        <div class="flex flex-col justify-center items-center md:grid grid-cols-2 gap-5">
+            <div class="flex space-x-5">
+                <p class="font-bold text-md">First Name</p>
+                <p class="text-md underline">{{contact.firstName}}</p>
+            </div>
+            <div class="flex space-x-5">
+                <p class="font-bold text-md">Last Name</p>
+                <p class="text-md underline">{{contact.lastName}}</p>
+            </div>
+            <div class="flex space-x-5">
+                <p class="font-bold text-md">Middle Name</p>
+                <p class="text-md underline">{{contact.middleName}}</p>
+            </div>
+            <div class="flex space-x-5">
+                <p class="font-bold text-md">Nickname</p>
+                <p class="text-md underline">{{contact.nickname}}</p>
+            </div>
+            <div class="flex space-x-5">
+                <p class="font-bold text-md">Birthday</p>
+                <p class="text-md underline">{{contact.birthday}}</p>
+            </div>
+            <div class="flex space-x-5">
+                <p class="font-bold text-md">Gender</p>
+                <p class="text-md underline">{{contact.gender}}</p>
+            </div>
+        </div>
+    </div>
+    @if (contact.contactCompany) {
+    <div class="space-y-3">
+        <h2 class="text-md font-bold bg-[#D0D0D0] p-4">Company</h2>
+        <div class="p-4 space-y-2 ">
+            <div class="flex flex-col justify-center items-center md:grid grid-cols-2 gap-5 p-2 border rounded-2xl">
+                <div class="flex space-x-5">
+                    <p class="font-bold text-md">Name</p>
+                    <p class="text-md underline">{{contact.contactCompany.name}}</p>
+                </div>
+                <div class="flex space-x-5">
+                    <p class="font-bold text-md">Email</p>
+                    <p class="text-md underline">{{contact.contactCompany.email}}</p>
+                </div>
+                <div class="flex space-x-5">
+                    <p class="font-bold text-md">Phone Number</p>
+                    <p class="text-md underline">{{contact.contactCompany.phoneNumber}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+    }
+</div>

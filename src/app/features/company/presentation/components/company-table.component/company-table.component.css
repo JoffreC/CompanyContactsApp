@@ -1,0 +1,26 @@
+.mat-mdc-header-row {
+    background-color: #D0D0D0;
+}
+
+::ng-deep .mat-mdc-header-cell {
+    text-align: center !important;
+    justify-content: center !important;
+}
+
+
+::ng-deep .mat-mdc-cell {
+    text-align: center !important;
+    justify-content: center !important;
+}
+
+::ng-deep .mat-sort-header-container {
+    justify-content: center !important;
+}
+
+.icon {
+    color: green;
+}
+
+.row:hover {
+    background-color: rgb(189, 182, 182);
+}
