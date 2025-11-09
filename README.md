@@ -9,13 +9,14 @@ To install all dependencies, run:
 npm install
 ```
 
+Change the URLs to the microservices if necessary in features/company/domain/services and features/contact/domain/services.
+
 To start a local development server, run:
 
 ```bash
 ng serve
 ```
 
-Change the URLs to the microservices if necessary in features/company/domain/services and features/contact/domain/services.
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
 ## Code scaffolding
