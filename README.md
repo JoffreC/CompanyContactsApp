@@ -3,6 +3,11 @@
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.2.
 
 ## Development server
+To install all dependencies, run:
+
+```bash
+npm install
+```
 
 To start a local development server, run:
 
@@ -10,6 +15,7 @@ To start a local development server, run:
 ng serve
 ```
 
+Change the URLs to the microservices if necessary in features/company/domain/services and features/contact/domain/services.
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
 ## Code scaffolding
